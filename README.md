@@ -12,10 +12,16 @@ Install php composer, navigate to project folder and run:
 composer install
 ```
 
-Change 'settings.txt' file to:
+Change 'settings.txt' file name to:
 
 ```
 .htaccess
+```
+
+Run:
+
+```
+books.sql
 ```
 
 ## Built With
