@@ -1,0 +1,795 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* CSS RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html{
+	font-size: 62.5%; /* 1rem == 10px */
+}
+
+
+
+
+
+/*
+
+
+
+
+* 	=== HOME PAGE ===
+
+
+
+
+*/
+
+
+/* Home page- Menu */
+.container{
+	width: 100%;
+}
+
+.wrapper_menu{
+	width:100%;
+	height: 5rem
+}
+
+.menu{
+	width: 100%;
+	height: 5rem;
+	background-color: #7FA5FF;
+	text-align: right;
+	position: fixed;
+	padding-right: 15%;
+	font-family: 'Kalam', cursive;
+}
+
+@media only screen and (max-width: 450px) {
+	.menu{
+		padding: 0;
+		text-align: center;
+	}
+}
+
+.menu ul li a{
+	color: white;
+	font-size: 1.6rem;
+}
+
+.menu ul li{
+	margin-top: .5rem;
+	display: inline-block;
+	padding: 1rem;
+}
+
+
+/* Home page- SubMenu ( Search and Logo) */
+
+
+.sub_menu{
+	width: 100%;
+	display: flex;
+}
+.sub_menu_logo, .sub_menu_search{
+	display: inline-block;
+}
+.sub_menu_logo{
+	text-align: center;
+	width: 40%;
+}
+.sub_menu_logo img{
+	max-width: 100%;
+}
+.sub_menu_search{
+	text-align: left;
+	width: 60%;
+	position: relative;
+}
+.sub_menu_search input[type = "search"]{
+	width: 80%;
+    text-align: center;
+    border: 2px solid rgb(45,81,163);
+    outline: none;
+    border-radius: 1.4rem;
+	font-size: 1.6rem;
+	background-color: inherit;
+	padding: .5rem 2rem;
+}
+.sub_menu_form{
+  	position: absolute;
+  	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+}
+
+
+/* Home page- Control Menu ( Sort books by price, name, category) */
+
+
+.control_menu{
+	width: 100%;
+	height: auto;
+	background-color: #7FA5FF;
+	text-align: left;
+	padding-left: 12%;
+	font-family: 'Kalam', cursive;
+	display: inline-block;
+	font-size: 1.3rem;
+}
+@media only screen and (max-width: 800px) {
+	.control_menu{
+		padding: 0;
+	}
+}
+
+.control_menu ul li a{
+	color: white;
+}
+.control_menu ul li{
+	display: inline-block;
+	padding: 1rem;
+}
+.control_menu_book_category, .control_menu_book_sort{
+	display: inline-block;
+}
+.control_menu_book_category{
+	width: 80%;
+}
+.control_menu_book_sort{
+	width: 20%;
+}
+.control_menu_book_sort_form select{
+	background-color:#7FA5FF ;
+	color: white;
+	border:0;
+    text-align: center;
+    border: 3px solid white;
+    outline: none;
+    border-radius: 2.4rem;
+    transition: 0.25s;
+}
+
+@media only screen and (max-width: 800px) {
+	.control_menu_book_category, .control_menu_book_sort{
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+}
+
+/* Home page- Books Section ( All books presented ) */
+
+.books_section{
+	width: 100%;
+	text-align: center;
+}
+
+.book{
+	width: 18rem;
+	display: inline-block;
+	padding: 1rem;
+	font-size: 1.2rem;
+}
+
+.book_center{
+	width: 18rem;
+	text-align:center;
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+}
+.book_center_price, .book_center_header{
+	margin: .5rem 0;
+}
+.book_center_header a{
+	color:#7FA5FF;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.book_bottom_details{
+	width: 18rem;
+	height: 3rem;
+	margin: .3rem 0 0 0;
+}
+
+.book_bottom_details_cart{
+	width: 1.2rem
+}
+
+.book_bottom_details_text{
+	color: #7FA5FF;
+	text-transform: uppercase;
+}
+
+
+/*
+
+
+
+
+* 	=== REGISTER AND LOGIN PAGE ===
+
+
+
+
+*/
+
+.register_container{
+	width: 100%;
+	height: 100vh;
+    background-image: url(../img/core/pozadina2.png);
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+.login_container{
+	width: 100%;
+	height: 100vh;
+    background-image: url(../img/core/pozadina.jpg);
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+.register_box, .login_box{
+  width: 25%;
+  min-height: 80%;
+  margin: 2% auto;
+  background: #7FA5FF;
+  text-align: center;
+  color:black;
+  border-radius: 2.4rem;
+}
+.login_box{
+	min-height: initial;
+}
+
+@media only screen and (max-width: 1400px) {
+	.register_box , .login_box{
+		width: 35%;
+	}
+}
+
+@media only screen and (max-width: 950px) {
+	.register_box , .login_box{
+		width: 45%;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	.register_box , .login_box{
+		width: 65%;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.register_box , .login_box{
+		width: 80%;
+	}
+}
+.register_box img , .login_box img{
+	margin-top: 1em;
+}
+
+.register_box_center , .login_box_center{
+	padding-top: 8%;
+}
+
+.register_box_center input[type ="text"], .register_box_center input[type = "password"],.login_box_center input[type ="text"], .login_box_center input[type = "password"]{
+  padding: 20px;
+  border:0;
+  background: white;
+  text-align: center;
+  border: 2px solid #7FA5FF;
+  outline: none;
+  border-radius: 25%;
+  transition: 0.5s;
+}
+
+.register_box_center input[type = "text"]:focus, .register_box_center input[type = "password"]:focus, .login_box_center input[type = "text"]:focus, .login_box_center input[type = "password"]:focus{
+  border-color: rgb(45,81,163);
+  padding: 20px 70px;
+}
+
+.register_box_center button, .login_box_center button{
+  border:0;
+  background: white;
+  text-align: center;
+  border: 2px solid #7FA5FF;
+  padding: 1em 3em;
+  outline: none;
+  color: rgb(45,81,163);
+  border-radius: 25%;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.register_box_center button:hover,.login_box_center button:hover{
+  background: rgb(45,81,163);
+  padding: 1em 5em;
+  color: white;
+}
+.register_box_center input, .login_box_center input{
+	margin-top: 5%;
+}
+.register_box_center button, .login_box_center button{
+	margin-top: 5%;
+}
+.error_login_register p{
+	font-size: 2rem;
+	padding: 1rem 0;
+}
+.error_login_register a{
+	color: rgb(45,81,163);
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+.go_to_register{
+	display: block;
+	cursor: pointer;
+	margin: 3rem 0;
+    padding: 5rem;
+
+}
+.go_to_register a{
+	color: white;
+	cursor: pointer;
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+/*
+
+
+
+
+* 	=== CONTACT PAGE ===
+
+
+
+
+*/
+
+#contact__middle{
+	width: 100%;
+	height: 30rem;
+	margin-top: 3rem;
+}
+.contact__middle_box{
+	width: 50%;
+	display: inline-block;
+	text-align: center;
+}
+.contact__middle_box:first-child{
+	float: left;
+	font-size: 1.2vw;
+	font-family: 'Kalam', cursive;
+	font-weight: 600;
+	padding:1em;
+	height: 80%;
+	line-height: 1.5em;
+}
+
+.contact__middle_secondBox{
+	float: right;
+	text-align: center;
+}
+.contact__middle_box_img{
+	border-radius: 3rem;
+	max-width: 100%;
+}
+.clear{
+	clear: both;
+}
+
+.contact_bottom{
+	width: 100%;
+	height: 35em;
+}
+.contact_bottom header{
+	font-size: 2em;
+	font-weight: 600;
+	text-align: center;
+	font-family: 'Kalam', cursive;
+	margin-top: 7rem;
+}
+.contact_bottom form{
+	text-align: center;
+	width: 100%;
+	margin-top: 2em;
+}
+.contact_bottom input[type = "text"], input[type = "email"]{
+	padding: 20px 60px;
+	margin: 1em;
+	border:0;
+    text-align: center;
+    border: 2px solid #7FA5FF;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    font-size: 1.2em;
+    background-color: inherit;
+}
+
+.contact_bottom textarea{
+	margin: 1em;
+	border:0;
+ 	text-align: center;
+    border: 2px solid #7FA5FF;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    font-size: 1.2em;
+    outline: none;
+}
+.contact_bottom input[type = "text"]:focus, input[type = "email"]:focus{
+    padding: 1em 5em;
+    border-color: rgb(45,81,163);
+}
+.contact_bottom textarea:focus{
+  padding: 1em 5em;
+  border-color: rgb(45,81,163);
+}
+.contact_bottom input[type = "submit"]{
+	padding: 1em 3em;
+	margin: 1em;
+	border:0;
+    text-align: center;
+    border: 2px solid #7FA5FF;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    font-size: 1.2em;
+    background-color: inherit;
+}
+.contact_bottom input[type = "submit"]:hover{
+	background-color: rgb(45,81,163);
+	color:white;
+	padding: 1em 5em;
+}
+
+@media only screen and (max-width: 1000px) {
+	.contact__middle{
+		height: auto;
+	}
+	.contact__middle_box{
+		width: 100%;
+		display: block;
+		margin-bottom: 1rem;
+	}
+
+	.contact__middle_box:first-child{
+		height: auto;
+		font-size: 1.2rem;
+	}
+	.contact_bottom header{
+		margin-top: 0;
+	}
+
+}
+
+
+/*
+
+
+
+
+* 	=== ABOUT PAGE ===
+
+
+
+
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+
+
+#parallax-world-of-ugg h1 {
+	font-family: 'Oswald', sans-serif; 
+	font-size: 2.4rem; 
+	font-weight: 400; 
+	text-transform: uppercase;
+	color:black;
+	padding: 0;
+	margin: 0;
+}
+#parallax-world-of-ugg h2 {
+	font-family:'Oswald', sans-serif;
+	font-size: 7rem;
+	letter-spacing: 1rem;
+	text-align: center;
+	color: white;
+	font-weight: 400;
+	text-transform: uppercase;
+	z-index: 10;
+	opacity: .9;
+}
+#parallax-world-of-ugg h3 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.4rem;
+	line-height: 0;
+	font-weight:400;
+	letter-spacing: .8rem;
+	text-transform: uppercase; 
+	color: black;
+}
+#parallax-world-of-ugg p {
+	font-family:'Source Sans Pro', sans-serif;
+	font-weight: 500; 
+	font-size: 1.2rem;
+	line-height: 2.4rem;
+}
+#parallax-world-of-ugg span{
+	color:rgb(45,81,163);
+}
+
+#parallax-world-of-ugg .title {
+	background: white;
+	padding: 6rem;
+	margin:0 auto;
+	text-align:center;
+}
+#parallax-world-of-ugg .title h1 {
+	font-size: 3.5rem;
+	letter-spacing: .8rem;
+}
+
+#parallax-world-of-ugg .block {
+	background: white;
+	padding: 60px;
+	width: 100%;
+	margin: 2rem auto;
+	text-align: center;
+}
+
+#parallax-world-of-ugg .parallax-one {
+	padding-top: 20rem;
+	padding-bottom: 20rem; 
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	background-image: url(../img/core/biblioteka.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+.contact_map iframe{
+	width: 100%;
+}
+
+
+/*
+
+
+
+
+* 	=== CART PAGE ===
+
+
+
+
+*/
+
+#cart_box{
+	width: 50%;
+	margin: 10rem auto;
+	background-color: rgb(45,81,163);
+}
+@media only screen and (max-width: 1000px) {
+	#cart_box{
+		width: 70%;
+	}
+}
+@media only screen and (max-width: 700px) {
+	#cart_box{
+		width: 100%;
+	}
+}
+.cart_box_title{
+	padding-top: 2rem;
+	font-size: 2rem;
+	font-weight: bold;
+	font-family: cursive;
+	color: white;
+	text-align: center;
+}
+
+.cart_box_controlPanel{
+	color: white;
+	font-size: 2rem;
+	display: flex;
+	justify-content: space-between;
+	padding: 2rem;
+	text-transform: uppercase;
+}
+
+.cart_box_controlPanel li:first-child{
+	cursor: pointer;
+}
+
+.cart_book_product{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 2rem;
+}
+.cart_book_product img{
+	width: 5rem;
+}
+
+.cart_book_product_title{
+	color: white;
+	font-size: 1.6rem;
+}
+
+.cart_book_product_price{
+	color: white;
+	font-size: 1.6rem;
+}
+
+
+
+/*
+
+
+
+
+* 	=== BOOK PAGE === (ONE BOOK / PRODUCT PAGE)
+
+
+
+
+*/
+
+.product_box{
+	width: 100%;
+}
+
+.product_box_single{
+	background-color: rgb(45,81,163);
+	color: white;
+	width: 50%;
+	margin: 10rem auto;
+	padding: 3rem;
+}
+@media only screen and (max-width: 1500px) {
+	.product_box_single{
+		width: 70%;
+	}
+}
+@media only screen and (max-width: 1100px) {
+	.product_box_single{
+		width: 100%;
+	}
+}
+
+.product_box_single_title{
+	width: 100%;
+	text-align: center;
+	padding: 1rem;
+	font-size: 3rem;
+}
+
+.product_box_single_image, .product_box_single_text{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.product_box_single_image{
+	width: 30%;
+}
+
+.product_box_single_text{
+	width: 70%;
+	font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 750px) {
+	.product_box_single_image, .product_box_single_text{
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.product_box_single_subTitle{
+	color: white;
+	font-family: cursive;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+.product_box_single_about{
+	color: white;
+	font-family: cursive;
+	margin-bottom: 1rem;
+}
+
+.product_box_single_isbn{
+	display: block;
+	color: black;
+	margin-top: 0.5rem;
+}
+
+.product_box_single_price_value{
+	color: red;
+	font-weight: bold;
+}
+
+.product_box_single_cart{
+	margin-top: 1em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.product_box_single_cart img{
+	padding-right: 5px;
+}
+.no_products_in_cart{
+	width: 100%;
+	color: white;
+	font-size: 2rem;
+	text-align: center;
+	padding-bottom: 2rem;
+}
