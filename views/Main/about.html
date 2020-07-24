@@ -1,0 +1,46 @@
+{% extends "_global/index.html"  %}
+
+{% block main %}
+<div class="contact_container">
+  <div class="wrapper_menu">
+    <div class="menu">
+      <ul>
+        {% block menu %}
+        <li><a href="/">Home</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/about/">About us</a></li>
+        {% if user == 'true' %}
+          <li><a href="/cart/"><img src="/assets/img/core/kolica2.png"></a></li>
+          <li><a href="/user/logout/">LogOut</a></li>
+        {% else %}
+          <li><a href="/user/login/">Login/Register</a></li>
+        {% endif %}
+        {% endblock %}
+      </ul>
+    </div>
+  </div>
+  <div id="parallax-world-of-ugg">
+  
+	<section>
+	  <div class="title">
+		<h3>Books</h3><br>
+		<h1>Who are we?</h1>
+	  </div>
+	</section>
+	
+	<section>
+		<div class="parallax-one">
+		  <h2>All Books Available to All</h2>
+		</div>
+	</section>
+	
+	<section>
+	  <div class="block">
+	   <p style="font-size:2rem"><span>Books (books.com)</span> is a leading international book retailer with a unique offer:<span> over 20 million books and free delivery worldwide.</span><br> We ship thousands of books every day from our fulfillment centres in Serbia, United Kingdom, Australia to more than 130 countries across the world.<br>Our vision is to provide “All Books Available to All” by improving selection, access and affordability of books.</p></div>
+	</section>
+  </div>
+  <div class="contact_map">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.7034852641327!2d20.461360115754175!3d44.80723118505857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7aa625de6b1b%3A0xf0843723d68cb091!2z0JHQtdC-0LPRgNCw0ZLQsNC90LrQsCwg0JrRgNCw0ZnQsCDQnNC40LvQsNC90LAgNSwg0JHQtdC-0LPRgNCw0LQgMTEwMDA!5e0!3m2!1ssr!2srs!4v1556205764120!5m2!1ssr!2srs" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>	
+  </div>
+</div>
+{% endblock %}

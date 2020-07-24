@@ -1,0 +1,18 @@
+{
+    "name": "project/books",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Milos Stojicic",
+            "email": "as.stojicic@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\" : ""
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{% extends "_global/index.html"  %}
+
+{% block main %}
+<div class="login_container">
+  <div class="wrapper_menu">
+    <div class="menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/about/">About us</a></li>
+        <li><a href="/user/register/">Register</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="login_box">
+	<div class="login_box_center">
+		<img src="/assets/img/core/malilogo.png">
+      <form class="login_box_form" action="/user/login/" method="POST">
+        <input type="text"     name="login_email"    placeholder="Email"><br>
+        <input type="password" name="login_password" placeholder="Password"><br>
+        <button>Login</button><br>
+        <span class="go_to_register"><a href="/user/register/">You don't have an account yet? Sign up!</a></span>
+			</form>
+		</div>
+  </div>
+</div>
+{% endblock %}
+

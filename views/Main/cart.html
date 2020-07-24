@@ -1,0 +1,33 @@
+{% extends "_global/index.html"  %}
+
+{% block main %}
+<div class="cart_container">
+  <div class="wrapper_menu">
+    <div class="menu">
+      <ul>
+        {% block menu %}
+        <li><a href="/">Home</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/about/">About us</a></li>
+        {% if user == 'true' %}
+        <li><a href="/cart/"><img src="/assets/img/core/kolica2.png"></a></li>
+        <li><a href="/user/logout/">LogOut</a></li>
+        {% else %}
+        <li><a href="/user/login/">Login/Register</a></li>
+        {% endif %}
+        {% endblock %}
+      </ul>
+    </div>
+  </div>
+  <div id="cart_box">
+  <div class="cart_box_title" >Your Products</div>
+    <ul class="cart_box_controlPanel">
+      <li onclick="clearBookmarks()">Clear cart</li>
+      <li>Your total: <span class="cart_totalPrice">0.0</span>€</li>
+    </ul>
+	<div id="cart_box_products">
+  
+	</div>
+  </div>
+</div>
+{% endblock %}

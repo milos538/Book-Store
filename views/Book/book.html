@@ -1,0 +1,43 @@
+{% extends "_global/index.html"  %}
+
+{% block main %}
+<div class="product_container">
+  <div class="wrapper_menu">
+    <div class="menu">
+      <ul>
+        {% block menu %}
+        <li><a href="/">Home</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/about/">About us</a></li>
+        {% if user == 'true' %}
+          <li><a href="/cart/"><img src="/assets/img/core/kolica2.png"></a></li>
+          <li><a href="/user/logout/">LogOut</a></li>
+        {% else %}
+          <li><a href="/user/login/">Login/Register</a></li>
+        {% endif %}
+        {% endblock %}
+      </ul>
+    </div>
+  </div>
+  <div class="product_box">
+    {% for book in books %} 
+    <div class='product_box_single'>
+        <div class='product_box_single_title'>{{book.naziv | escape}} ({{book.godina | escape}})</div>
+          <div class='product_box_single_image'>
+          <img src='/assets/img/productImages/{{book.slika | escape}}' height=250 width=185 alt='Book cover' />
+          </div><!--
+          --><div class='product_box_single_text'>
+            <div class='product_box_single_subTitle'>{{book.naziv | escape}} from {{book.ime | escape}} {{book.prezime | escape}} </div>
+            <div class='product_box_single_about'>{{book.opis | escape}}<span class='product_box_single_isbn'>ISBN13: {{book.isbn | escape}}</span></div>
+            <div class='product_box_single_price'><span class='product_box_single_price_value'>{{book.cena | escape}} €</span></div>
+            <div class='product_box_single_cart'>
+            {% if user == 'true' %}
+            <img src='/assets/img/core/kolica.png'><a onclick='addBookmark("{{ book.knjiga_id }}");'>Add to cart</a>
+            {% endif %}
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

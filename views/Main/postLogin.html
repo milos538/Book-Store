@@ -1,0 +1,23 @@
+{% extends "_global/index.html"  %}
+
+{% block main %}
+<div class="container">
+  <div class="wrapper_menu">
+    <div class="menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/about/">About us</a></li>
+        <li><a href="/user/login/">Login</a></li>
+        <li><a href="/user/register/">Register</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="books_section">
+    <div class="error_login_register">
+      <p>{{message}}</p>
+      <p><a href='/user/login'>Go back</a> to login page!</p>
+  </div>
+  </div>
+</div>
+{% endblock %}

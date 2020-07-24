@@ -1,0 +1,44 @@
+{% extends "_global/index.html"  %}
+
+{% block main %}
+<div class="contact_container">
+  <div class="wrapper_menu">
+    <div class="menu">
+      <ul>
+        {% block menu %}
+        <li><a href="/">Home</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/about/">About us</a></li>
+        {% if user == 'true' %}
+          <li><a href="/cart/"><img src="/assets/img/core/kolica2.png"></a></li>
+          <li><a href="/user/logout/">LogOut</a></li>
+        {% else %}
+          <li><a href="/user/login/">Login/Register</a></li>
+        {% endif %}
+        {% endblock %}
+      </ul>
+    </div>
+  </div>
+  
+  <div id="contact__middle">
+		<div class="contact__middle_box">
+			The most convenient way to contact us is by filling in the online contact form. The form is designed to help you specify the problem or the query and then direct it to the member of staff best suited to deal with it.<br>Alternatively we are always happy to hear from you and help with any queries or problems. We endeavour to answer all queries within 24 hours.<br>We are also very happy to receive your feedback and suggestions. All emails are personally read and replied to by our Customer Service staff. Please send your emails to help@support.books.com
+		</div>
+	<div class="contact__middle_box contact__middle_secondBox">
+		<img src="/assets/img/core/kontakt.jpg" class="contact__middle_box_img" width="600px">
+	</div>
+	<div class="clear"></div>
+  </div>
+   
+  <div class="contact_bottom">
+	<header>Please fill in this form:</header>
+	<form>
+		<input type="text"  placeholder="Name"><br>
+	  	<input type="text"  placeholder="Surname"><br>
+	  	<input type="email" placeholder="E-mail"><br>
+		<textarea           placeholder="Your message" rows="10" cols="50" ></textarea><br>
+		<input type="submit" value="Submit">
+	</form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "_global/index.html"  %}
+
+{% block main %}
+<div class="container">
+  <div class="wrapper_menu">
+    <div class="menu">
+      <ul>
+        {% block menu %}
+        <li><a href="/">Home</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/about/">About us</a></li>
+        {% if user == 'true' %}
+          <li><a href="/cart/"><img src="/assets/img/core/kolica2.png"></a></li>
+          <li><a href="/user/logout/">LogOut</a></li>
+        {% else %}
+          <li><a href="/user/login/">Login/Register</a></li>
+        {% endif %}
+        {% endblock %}
+      </ul>
+    </div>
+  </div>
+  <div class="sub_menu">
+    <div class="sub_menu_logo">
+      <a href="/"><img src="/assets/img/core/logo.png"></a>
+    </div>
+    <div class="sub_menu_search">
+      <form class="sub_menu_form">
+        <input type="search" class="sub_menu_search_field" name="search" id="search" placeholder="Searh for books by title / author / ISBN ">
+        <img id="sub_menu_search_img" src="/assets/img/core/lupa.png">
+      </form>	
+    </div>
+  </div>
+  <div class="control_menu">
+      <ul class="control_menu_book_category">
+        <li><a href="/">All books</a></li>
+        <li><a href="/category/bestsellers">Bestsellers</a></li>
+        <li><a href="/category/comingsoon">Coming Soon</a></li>
+        <li><a href="/category/newreleases">New Releases</a></li>
+      </ul><!--
+      --><div class="control_menu_book_sort">
+        <form class="control_menu_book_sort_form">
+          <select onchange="location = this.value;">
+               <option value="0">Sort:</option>
+               <option value="priceu">Price upwards</option>
+                <option value="priced">Price downward</option>
+                <option value="nameu">Name upwards</option>
+                <option value="named">Name downward</option>
+            </select>
+        </form>
+      </div>
+  </div>
+  <div class="books_section">
+    {% for book in books %} 
+    <div class="book">
+      <div class="book_center">
+          <div class="book_center_image">
+            <a href="/book/{{book.knjiga_id | escape}}">
+              <img src="/assets/img/productImages/{{book.slika | escape}}" alt="Book cover" width="143" height="220"/>
+            </a>
+          </div>
+          <div class="book_center_header">
+            <a href="book/{{book.naziv | escape}} ">{{book.naziv | escape}}</a>
+          </div>
+          Price:<br>
+          <div class="book_center_price">
+            <span class="price">{{book.cena | escape}} €</span>
+          </div>
+      </div>
+      <div class="book_bottom_details">
+        <a href="index.php?addcart={{book.knjiga_id | escape}}>">
+          <img src="/assets/img/core/kolica.png" alt="Cart" class="book_bottom_details_cart"/>
+        </a>
+        <a href="/book/{{book.knjiga_id | escape}}" class="book_bottom_details_text"> Details</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

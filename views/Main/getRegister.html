@@ -1,0 +1,30 @@
+{% extends "_global/index.html"  %}
+
+{% block main %}
+<div class="register_container">
+  <div class="wrapper_menu">
+    <div class="menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/about/">About us</a></li>
+        <li><a href="/user/login/">Login</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="register_box">
+	<div class="register_box_center">
+		<img src="/assets/img/core/malilogo.png">
+		<div id="error"></div>
+			<form class="register_box_form" action="/user/register" method="POST">
+				<input type="text"       name="register_name"      placeholder="Name"><br>
+				<input type="text"       name="register_surname"  placeholder="Surname"><br>
+				<input type="text"       name="register_email"    placeholder="Email"><br>
+				<input type="password"   name="register_password1"      placeholder="Password"><br>
+				<input type="password"   name="register_password2"      placeholder="Repeat Password"><br>
+				<button name="submit">Sign up</button><br>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
